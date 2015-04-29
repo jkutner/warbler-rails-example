@@ -7,8 +7,10 @@ Rails.application.load_tasks
 
 
 task "assets:precompile" do
+  require 'warbler'
+  Warbler::Task.new
   Rake::Task["war"].execute
 
   # clean some things out of the slug that we don't need
-  `rm -rf vendor`
+  `rm -rf vendor` if ENV['STACK'] == "cedar-14"
 end

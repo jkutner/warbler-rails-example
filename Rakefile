@@ -13,7 +13,7 @@ task "assets:precompile" do
 
   puts "Executing war task"
   #Rake::Task["war"].execute
-  `warble`
+  exec('warble')
 end
 
 task "assets:clean" do

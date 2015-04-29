@@ -10,14 +10,8 @@ There are three methods of doing this:
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-### Ruby Buildpack Deployment
-
-```sh-session
-$ git clone https://github.com/jkutner/warbler-rails-example
-$ cd warbler-rails-example
-$ heroku create
-$ git push heroku master
-```
+This is kinda slow though. A better option, especially if you are using
+CI is toolbelt deployment.
 
 ### Standalone Toolbelt Deployment
 
@@ -29,6 +23,15 @@ $ heroku plugins:install https://github.com/heroku/heroku-deploy
 $ bundle install
 $ warble
 $ heroku deploy:jar --jar heroku-warbler-example.war
+```
+
+### Ruby Buildpack Deployment
+
+```sh-session
+$ git clone https://github.com/jkutner/warbler-rails-example
+$ cd warbler-rails-example
+$ heroku create
+$ git push heroku master
 ```
 
 ### Maven Deployment

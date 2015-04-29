@@ -8,11 +8,12 @@ Rails.application.load_tasks
 #Rake::Task["assets:precompile"].clear
 #Rake::Task["assets:clean"].clear
 task "assets:precompile" do
-  require 'warbler'
-  Warbler::Task.new
+  #require 'warbler'
+  #Warbler::Task.new
 
   puts "Executing war task"
-  Rake::Task["war"].execute
+  #Rake::Task["war"].execute
+  `warble`
 end
 
 task "assets:clean" do

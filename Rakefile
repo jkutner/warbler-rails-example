@@ -5,8 +5,8 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
-Rake::Task["assets:precompile"].clear
-Rake::Task["assets:clean"].clear
+#Rake::Task["assets:precompile"].clear
+#Rake::Task["assets:clean"].clear
 task "assets:precompile" do
   require 'warbler'
   Warbler::Task.new
@@ -17,5 +17,5 @@ end
 
 task "assets:clean" do
   # clean some things out of the slug that we don't need
-  `rm -rf vendor/ruby-2.2.2-jruby-9.0.0.0.pre2` if ENV['STACK'] == "cedar-14"
+  `rm -rf vendor/ruby-2.2.2-jruby-9.0.0.0.pre2`
 end

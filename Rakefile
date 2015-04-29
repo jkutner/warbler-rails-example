@@ -6,16 +6,14 @@ require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
 Rake::Task["assets:precompile"].clear
+Rake::Task["assets:clean"].clear
 task "assets:precompile" do
-  puts "loading warbler..."
   require 'warbler'
-
-  puts "Creating war task"
   Warbler::Task.new
 
   puts "Executing war task"
   Rake::Task["war"].execute
 
   # clean some things out of the slug that we don't need
-  `rm -rf vendor` if ENV['STACK'] == "cedar-14"
+  # `rm -rf vendor` if ENV['STACK'] == "cedar-14"
 end

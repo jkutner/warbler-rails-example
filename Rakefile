@@ -4,3 +4,12 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+Warbler::Task.new
+
+task "assets:precompile" do
+  Rake::Task["war"].execute
+
+  # clean some things out of the slug that we don't need
+  `rm -rf vendor`
+end

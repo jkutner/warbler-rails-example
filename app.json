@@ -1,0 +1,11 @@
+{
+  "name": "heroku-warbler-example",
+  "description": "JRuby application packaged with Warbler",
+  "keywords": [
+    "Warbler",
+    "JRuby"
+  ],
+  "website": "https://github.com/jkutner/heroku-warbler-example",
+  "repository": "https://github.com/jkutner/heroku-warbler-example",
+  "success_url": "/"
+}

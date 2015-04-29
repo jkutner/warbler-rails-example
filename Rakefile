@@ -5,7 +5,6 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
-Warbler::Task.new
 
 task "assets:precompile" do
   Rake::Task["war"].execute

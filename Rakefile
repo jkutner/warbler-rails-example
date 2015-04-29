@@ -11,7 +11,7 @@ task "assets:precompile" do
   require 'warbler'
   Warbler::Task.new
 
-  puts "Executing war task"
+  puts "Executing war task: this will take a long time. See the README.md"
   Rake::Task["war"].execute
 end
 

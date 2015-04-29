@@ -7,8 +7,13 @@ Rails.application.load_tasks
 
 Rake::Task["assets:precompile"].clear
 task "assets:precompile" do
+  puts "loading warbler..."
   require 'warbler'
+
+  puts "Creating war task"
   Warbler::Task.new
+
+  puts "Executing war task"
   Rake::Task["war"].execute
 
   # clean some things out of the slug that we don't need

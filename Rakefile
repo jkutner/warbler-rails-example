@@ -17,5 +17,6 @@ end
 
 task "assets:clean" do
   # clean some things out of the slug that we don't need
-  `rm -rf vendor/ruby-2.2.2-jruby-9.0.0.0.pre2`
+  #`rm -rf vendor/ruby-2.2.2-jruby-9.0.0.0.pre2`
+  `find vendor/* ! -name jvm -print0 | xargs -0 rm -rf --`
 end

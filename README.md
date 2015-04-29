@@ -1,21 +1,40 @@
-# ruby-getting-started (Microsoft Windows)
+## Heroku Warbler Example
 
-A barebones Rails app, which can easily be deployed to Heroku - on Microsoft Windows.
+This project demonstrates how to deploy a War file packaged with
+[Warbler](https://github.com/jruby/warbler) and [JRuby](http://jruby.org)
+to [Heroku](http://heroku.com).
 
-This application support the [Getting Started with Ruby on Heroku (Microsoft Windows)](https://devcenter.heroku.com/articles/getting-started-with-jruby) article - check it out.
+There are three methods of doing this:
 
-## Deploying to Heroku
+### Heroku Button
 
-```sh
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+### Ruby Buildpack Deployment
+
+```sh-session
+$ git clone https://github.com/jkutner/warbler-rails-example
+$ cd warbler-rails-example
 $ heroku create
 $ git push heroku master
-$ heroku run rake db:migrate
-$ heroku open
 ```
 
-## Documentation
+### Standalone Toolbelt Deployment
 
-For more information about using Ruby on Heroku, see these Dev Center articles:
+```sh-session
+$ git clone https://github.com/jkutner/warbler-rails-example
+$ cd warbler-rails-example
+$ heroku create
+$ heroku plugins:install https://github.com/heroku/heroku-deploy
+$ bundle install
+$ warble
+$ heroku deploy:jar --jar heroku-warbler-example.war
+```
 
-- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
+### Maven Deployment
 
+Another method of deployment, not demonstrated here, uses a `pom.xml` to configure the app. For an example of this, see the [jruby-async-servlets-example](https://github.com/jkutner/jruby-async-servlets-example).
+
+### Other Examples:
+
++ 1.7.x - [kissaten/warbler-example](https://github.com/kissaten/warbler-example)

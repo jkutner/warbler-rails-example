@@ -10,8 +10,8 @@ There are three methods of doing this:
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-This is kinda slow though, because the `warble` process runs inside of a
-Rails process (because that's how Heroku does post-deploy tasks). A better option, especially if you are using
+This is kinda slow though, because the `warble` process runs inside of
+another process (because that's how Heroku does post-deploy tasks). A better option, especially if you are using
 CI is toolbelt deployment.
 
 ### Standalone Toolbelt Deployment
